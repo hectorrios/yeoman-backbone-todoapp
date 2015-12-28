@@ -1,7 +1,7 @@
 /*global yeoman-tutorial, $*/
 
 
-window.yeoman-tutorial = {
+window.YeomanTutorial = {
   Models: {},
   Collections: {},
   Views: {},
@@ -9,7 +9,7 @@ window.yeoman-tutorial = {
   init: function () {
     'use strict';
     console.log('Hello from Backbone!');
-    new this.Views.TodosView({
+    new this.Views.Todos({
       collection: new this.Collections.Todos()
     });
   }
@@ -17,5 +17,5 @@ window.yeoman-tutorial = {
 
 $(document).ready(function () {
   'use strict';
-  yeoman-tutorial.init();
+  YeomanTutorial.init();
 });

@@ -22,7 +22,7 @@ YeomanTutorial.Models = YeomanTutorial.Models || {};
       return response;
     },
 
-    toggle: function (argument) {
+    toggle: function () {
       this.save({
         completed: !this.get('completed')
       });

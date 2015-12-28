@@ -38,15 +38,27 @@ YeomanTutorial.Views = YeomanTutorial.Views || {};
     },
 
     createTodo: function(event) {
+      event.preventDefault();
+      var title = this.$('#new-todo').val().trim();
 
+      if (title) {
+        this.collection.create(new YeomanTutorial.Models.Todo({
+          'title': title
+        }));
+      }
+
+      $('#new-todo').val('');
     },
-    
+
     addTodoItem: function (todoItem) {
-
+      var view = new YeomanTutorial.Views.Todo({
+        model: todoItem
+      });
+      this.$('ul').append(view.render().el);
     },
 
-    addAllTodoItems: function (todoItems) {
-
+    addAllTodoItems: function () {
+      this.collection.each(this.addTodoItem, this)
     }
 
   });
